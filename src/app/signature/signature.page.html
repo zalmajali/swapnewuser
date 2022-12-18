@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <div class="logo">
+    <ion-title>
+      Signature
+    </ion-title>
+  </div>
+  <div class="closeSignature" id="closeSignature">
+    <ion-buttons slot="end" onclick="history.go(-1);">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="signatureCanvas" id="signatureCanvas">
+    <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+      <div class="signatureBtn">
+        <ion-button size="large" (click)="clearPad()">Clear</ion-button>
+        <ion-button size="large" color="secondary" (click)="savePad()">Save</ion-button>
+      </div>
+
+      <img src='{{ signatureImg }}' />
+  </div>
+
+  <div class="checkbox-NA-PLOS">
+    <ion-list>
+      <ion-item (ionChange)="signatureSelect($event)">
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>N/A</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>PLOS</ion-label>
+      </ion-item>
+    </ion-list>
+    </div>
+    <div class="saveBtn">
+      <ion-button>Submit</ion-button>
+    </div>
+</ion-content>

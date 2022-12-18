@@ -1,0 +1,240 @@
+<ion-header [translucent]="true">
+
+  <div class="menu-header" id="main-content">
+    <ion-buttons slot="start">
+      <ion-menu-button><ion-icon name="menu-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+  </div>
+  <ion-menu contentId="main-content">
+    <ion-header class="menu-content">
+        <ion-title>Menu</ion-title>
+    </ion-header>
+    <ion-content class="menuContent-sidebar">
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label [routerLink]="['/profile']">Profile</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="settings-outline"></ion-icon>
+          <ion-label [routerLink]="['/setting']">Setting</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="file-tray-full-outline"></ion-icon>
+          <ion-label [routerLink]="['/home']">Tickets</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="log-out-outline"></ion-icon>
+          <ion-label [routerLink]="['/login']">Logout</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <div class="logo">
+    <ion-title>
+      Stock
+    </ion-title>
+  </div>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="activitiesListContent">
+
+    <!-- Start Stock Section -->
+<div class="stockPageContent">
+  <div class="stockHeadingContent">
+          <div class="stockHeadingInfo">
+          <ion-icon name="cube-outline"></ion-icon>
+          <div class="activitiesTitleInfo">
+            <ion-text><h1>Stock Name</h1></ion-text>
+          </div>
+        </div>
+  </div>
+
+  <div class="activitiesListInfo">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="activitiesList">
+            <ion-list>
+              <ion-item>
+                <div class="activities-Location">
+                <ion-icon class="location" name="location-outline"></ion-icon>
+                <ion-text>Dummyrstraße 66, 13055 Berlin</ion-text>
+              </div>
+              </ion-item>
+              <ion-item>
+                    <div class="activities-CallInfo">
+                      <ion-icon name="call-outline"></ion-icon>
+                      <ion-text>+0123456789</ion-text>
+
+                    </div>
+              </ion-item>
+            </ion-list>
+          </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+
+
+</div>
+<!-- End Stock Section-->
+
+<!-- Stock New Parts Section -->
+
+
+  <div class="partsTab">
+
+    <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="segment">
+      <ion-segment-button value="0">
+        New Parts
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        Return Parts
+      </ion-segment-button>
+      <ion-segment-button value="2">
+        Technical Parts
+      </ion-segment-button>
+    </ion-segment>
+
+
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="false">
+      <ion-slide>
+        <div class="newPartsContent">
+
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Television</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Washing Machine</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Phone Devices</ion-label>
+          </ion-item>
+      </div>
+
+      </ion-slide>
+      <ion-slide>
+        <div class="newPartsContent">
+
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Television</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Washing Machine</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Phone Devices</ion-label>
+          </ion-item>
+
+          <div class="signatureCanvas">
+            <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+              <div class="signatureBtn">
+                <ion-button size="small" (click)="clearPad()">Clear</ion-button>
+                <ion-button size="small" color="secondary" (click)="savePad()">Save</ion-button>
+              </div>
+          </div>
+
+          <div class="checkbox-NA-PLOS">
+            <ion-list>
+              <ion-item>
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>N/A</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>PLOS</ion-label>
+              </ion-item>
+            </ion-list>
+            </div>
+
+      </div>
+
+
+
+      </ion-slide>
+      <ion-slide>
+        <div class="newPartsContent">
+
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Television</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Washing Machine</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start"></ion-checkbox>
+            <ion-label>Phone Devices</ion-label>
+          </ion-item>
+
+          <div class="signatureCanvas">
+            <canvas #canvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"></canvas>
+              <div class="signatureBtn">
+                <ion-button size="small" (click)="clearPad()">Clear</ion-button>
+                <ion-button size="small" color="secondary" (click)="savePad()">Save</ion-button>
+              </div>
+          </div>
+
+          <div class="checkbox-NA-PLOS">
+            <ion-list>
+              <ion-item>
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>N/A</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-checkbox slot="start"></ion-checkbox>
+                <ion-label>PLOS</ion-label>
+              </ion-item>
+            </ion-list>
+            </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Save Btn -->
+  <div class="saveBtn">
+    <ion-button>Save</ion-button>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+</ion-content>
+

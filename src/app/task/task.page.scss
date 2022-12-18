@@ -1,0 +1,214 @@
+@import url(../home/home.page.scss);
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 0px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width:15px;
+  height: 15px;
+  right: 0;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.taskLocationContent {
+  display: flex;
+}
+.taskTimeContent  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.taskLocationContent ion-icon {
+  color: #EF874E;
+    font-size: 15px;
+}
+.taskTimeContent ion-icon  {
+  font-size: 15px;
+  color: #2dd36f;
+}
+.timeTextColor {
+  color: #2dd36f;
+}
+.taskTextContent p ,.taskTimeContent p {
+  margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 11px;
+    padding-left: 5px;
+}
+.statusTaskTitle {
+  display: flex;
+    font-size: 14px;
+    /*background: #EF874E;*/
+    border-radius: 30px;
+    /*padding: 0.2rem 0.5rem;*/
+    padding: 0.2rem 0;
+    max-width: 39%;
+    color: #EF874E;
+}
+.statusTaskTitle p {
+  margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 5px;
+    font-size: 12px;
+}
+.taskStatusInfo ion-select {
+  width: 100%;
+  font-size: 11px;
+}
+.taskStatusInfo ion-list ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --min-height: 0;
+}
+.taskStatusInfo ion-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.descriptionInfo p {
+  margin-block-start: 0.5rem;
+    margin-block-end: 0;
+    font-size: 11px;
+}
+.descriptionInfo ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  font-size: 11px;
+}
+.signatureImg {
+  text-align: center;
+}
+.signatureImg img {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.entryExitTime ion-list ion-item ion-label {
+  font-size: 11px;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0;
+}
+.entryExitTime ion-list ion-item ion-label.entryTime , .entryExitTime ion-list ion-item ion-label.exitTime {
+  background: #e9e9e9;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 4px;
+  color: black;
+  border: 1px solid #bbb;
+}
+.entryExitTime ion-list ion-item ion-label ion-icon {
+  padding-right: 5px;
+}
+.entryExitTime ion-list ion-item {
+  --min-height: 27px;
+  --border-style: none;
+  --padding-start: 0px !important;
+  --padding-end: 0px !important;
+  padding-inline-start: 0px !important;
+  padding-inline-end: 0px !important;
+}
+.entryTimeTitle , .exitTimeTitle{
+  display: flex !important;
+  align-items: center;
+}
+
+
+/* Popup Forgot Password */
+ion-modal {
+  --height: 100%;
+  /*--border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);*/
+}
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+ion-modal ion-toolbar {
+  --background: #EF874E;
+  --color: white;
+}
+.btnSubmit {
+  --border-style: none !important;
+}
+.listForgotPassword {
+  padding: 9px 0 !important;
+  margin: 0 0.5rem;
+  background: transparent;
+  --background: transparent;
+}
+.listForgotPassword ion-item {
+  background: transparent;
+  --background: transparent;
+  padding-inline-start: 0 !important;
+padding-inline-end: 0 !important;
+--padding-start: 0px !important;
+--padding-end: 0px !important;
+}
+.btnSubmit {
+  padding: 0.5rem 0 0;
+}
+.btnSubmit ion-button {
+  --background: #EF874E;
+  --color: white;
+}
+.saveBtn ion-button {
+  width: 100%;
+background: #EF874E;
+--background: #EF874E;
+border-radius: 15px;
+}
+.statusTaskContent .descriptionInfo ion-textarea {
+  background: #d7d7d745;
+  border-radius: 5px;
+  font-size: 11px;
+}
+.completeSignature {
+  display: none;
+}
+.completeSignature ion-button {
+  --background: #EF874E;
+  --ion-color-base: #EF874E !important;
+  color: white;
+  font-size: 14px;
+}
+.minutesTask ion-list ion-item {
+  --border-style: none !important;
+  --padding-start: 0px !important;
+  --inner-padding-end: 0px !important;
+}
+.minutesTask ion-input {
+  background: #e9e9e9;
+  border-radius: 4px;
+  color: black;
+  border: 1px solid #bbb;
+  width: 100%;
+  font-size: 11px;
+  text-indent: 8px;
+}
